@@ -15,7 +15,7 @@ import java.util.Collections;
 
 
 @PageTitle("Java Web App")
-@Route(value = "")
+@Route(value = "", layout = MainLayout.class)
 public class ListView extends VerticalLayout {
     private CrmService service;
     Grid<Contact> grid = new Grid<>(Contact.class);
