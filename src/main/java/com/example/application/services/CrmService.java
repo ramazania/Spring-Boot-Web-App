@@ -1,11 +1,14 @@
 package com.example.application.services;
 
 import com.example.application.data.*;
+import com.example.application.security.Roles;
+import jakarta.annotation.security.RolesAllowed;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RolesAllowed(Roles.USER)
 public class CrmService {
 
     private final ContactRepository contactRepository;
