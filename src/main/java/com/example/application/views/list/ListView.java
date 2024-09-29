@@ -12,16 +12,18 @@ import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.PermitAll;
+import org.springframework.context.annotation.Scope;
 
 import java.util.Collections;
 
-
+@org.springframework.stereotype.Component
+@Scope("prototype")
 @PageTitle("Java Web App")
 @Route(value = "", layout = MainLayout.class)
 @PermitAll
 public class ListView extends VerticalLayout {
     private CrmService service;
-    Grid<Contact> grid = new Grid<>(Contact.class);
+    static Grid<Contact> grid = new Grid<>(Contact.class);
     TextField filterText = new TextField();
     ContactForm form;
 
